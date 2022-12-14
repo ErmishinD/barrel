@@ -6,7 +6,6 @@
 	<title>Document</title>
 </head>
 <body>
-	<div class="main">deb</div>
 	<div id="app">
 		<barrel></barrel>
 	</div>

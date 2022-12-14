@@ -4,6 +4,7 @@ import { createApp, h } from 'vue';
 import axios from 'axios'
 import lodash from 'lodash'
 import VueAxios from 'vue-axios'
+import VueSplide from '@splidejs/vue-splide';
 
 import Barrel from './components/Barrel.vue'
 
@@ -15,6 +16,6 @@ const app = createApp({
     render: ()=>h(Barrel)
 })
 
-app.use(VueAxios, axios)
+app.use(VueAxios, axios).use(VueSplide)
 
 app.mount('#app')

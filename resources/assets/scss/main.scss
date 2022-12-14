@@ -1,4 +1,396 @@
-.main{
+@import "reset.css";
+
+$red: #E40412;
+$padding_inline: 12%;
+
+@mixin setFont($font : 'Din-Pro', $weight : 400, $size, $color: #fff){
+	font-family: $font;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header{
+	background-color: #000;
+	border-bottom: 3px solid #FFA1A1;
+	padding-block: 6px;
+	padding-inline: $padding_inline;
+	@include setFont($size: 16px);
 	display: flex;
-	margin-top: 100px;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo{
+		display: flex;
+		img{
+			height: 50px;
+		}
+	}
+
+	&__menu{
+		display: flex;
+		align-items: center;
+
+		&_item{
+			margin-inline: 28px;
+			text-decoration: none;
+		    background-image: linear-gradient($red, $red);
+		    background-position: 0% 100%;
+		    background-repeat: no-repeat;
+		    background-size: 0% 2px;
+		    transition: background-size .3s;
+
+		    &:hover{
+		    	background-size: 100% 2px;
+		    }
+		}
+
+		&_button{	
+			margin-left: 28px;
+			@include setFont($size: 15px, $weight: 700);
+			padding: 10px 20px;
+		}
+	}
+}
+
+.red_button{
+	
+	
+	background-color: $red;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+
+	.button_triangle{
+		position: absolute;
+		background: linear-gradient(to right bottom, $red 50%, #fff 50%);
+		opacity: 0.8;
+		padding: 5px;
+		right: 0;
+		margin-top: -2px;
+		margin-right: 2px;
+		z-index: 1;
+	}
+
+	&:before {
+	    content: ""; /* отображает псевдоэлемент */
+	    position: absolute; /* абсолютное позиционирование */
+	    top: 0; /* верхняя координата */
+	    left: 0; /* левая координата */
+	    width: 2em; /* относительная ширина */
+	    height: 100%; /* высота как у оригинала */
+	    background-color: rgba(255, 255, 255, 0.3); /* белый цвет с полупрозрачностью */
+	    transform: translateX(-4em) skewX(-45deg);
+	    z-index: 2;
+	    transition: transform .5s ease;
+	}
+
+	&:hover:before{
+		transform: translateX(12em) skewX(-45deg);
+	}
+}
+
+.title{
+	background-image: url(../img/title_back.png);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
+	padding-top: 50px;
+	text-align: center;
+
+	&__logo{
+		img{
+			height: 300px;
+		}
+	}
+
+	&__text{
+		@include setFont($size: 19px, $weight: 500, $color: #000);
+		margin-top: 20px;
+
+		span{
+			display: block;
+			margin-inline: auto;
+			width: 400px;
+			line-height: 1.4;
+		}
+	}
+
+	&__button{
+		margin-top: 20px;
+		display: inline-block;
+		@include setFont($size: 22px, $weight: 700);
+		padding: 10px 40px;
+
+		.button_triangle{
+			padding: 7px;
+			margin-top: -7px;
+			margin-right: 2.5px;
+		}
+	}
+
+	&__mouse{
+		margin-top: 40px;
+
+		img{
+			width: 40px;
+		}
+	}
+}
+
+.advantages{
+	padding-top: 80px;
+	padding-inline: $padding_inline;
+	display: flex;
+	justify-content: space-between;
+
+	&__content{
+		margin-top: 50px;
+
+		&_title{
+
+			&__first_row{
+				display: flex;
+				align_items:center;
+
+				span{
+					@include setFont($size: 60px, $weight: 700, $color: #000);
+					line-height: 1;
+					margin-left: 15px;
+				}
+			}
+
+			&__second_row{
+
+				span{
+					@include setFont($size: 45px, $weight: 700, $color: #000);
+					line-height: 1;
+				}
+			}
+		}
+
+		&_list{
+			margin-top: 20px;
+			@include setFont($size: 19px, $weight: 500, $color: #000);
+
+			&__item{
+				margin-top: 5px;
+			}
+		}
+	}
+
+	
+
+	&__img{
+		img{
+			width: 500px;
+		}
+	}
+}
+
+.point{
+	background-color: $red;
+	@include setFont($size: 40px, $weight: 700, $color: #fff);
+	padding: 4px;
+	display: inline-block;
+	// padding-left: 7px;
+}
+
+.sales{
+	padding-top: 60px;
+	padding-inline: $padding_inline;
+	background-color: #ffefef;
+	padding-bottom: 60px;
+
+	&__title{
+
+		&_second_row{
+			@include setFont($size: 20px, $weight: 500, $color: #260202);
+			margin-top: 5px;
+			opacity: 0.7;
+		}
+	}
+
+	&_carousel{
+
+		&__item{
+			width: 320px;
+			position: relative;
+			margin-left: 15px;
+			height: 100%;
+
+			&_photo{
+				z-index: 2;
+				position: absolute;
+				transform: translate(-15px, -15px);
+				img{
+
+					width: 280px;
+				}
+			}
+
+			&_content{
+				box-sizing: border-box;
+				margin-top: 15px;
+				margin-right: 15px;
+				z-index: 1;
+				background: linear-gradient(180deg, #000000 0%, #610004 100%);
+				width: 280px;
+				padding-top: 180px;
+				padding-inline: 15px;
+				height: 100%;
+
+				&__title{
+					@include setFont($size: 25px, $weight: 700, $color: #fff);
+					margin-bottom: 10px;
+				}
+
+				&__underline{
+					background-color: $red;
+					width: 125px;
+					height: 5px;
+					margin-bottom: 15px;
+				}
+
+				&__description{
+					@include setFont($size: 16px, $weight: 500, $color: #fff);
+					padding-bottom: 20px;
+				}
+			}
+		}
+	}
+	
+}
+
+.splide{
+	display: flex;
+	flex-direction: column;
+}
+
+.splide__arrow svg{
+	fill: #fff;
+}
+
+.arrows_for_slider{
+	display: flex;
+	order: 1;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: 50px;
+}
+
+.arrow_for_slider{
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0;
+	transform: none;
+	margin-inline: 5px;
+	background: #260202;
+	border-radius: 0px;
+	opacity: 1;
+	padding: 2px;
+	height: 2.7em;
+	width: 2.7em;
+}
+
+.amounts{
+	box-sizing: border-box;
+	padding-top: 60px;
+	padding-inline: $padding_inline;
+
+	&__list{
+		margin-top: 15px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&:after{
+			content: "";
+			width: 324px;
+		}
+
+		&_item{
+			margin-top: 50px;
+			position: relative;
+			width: 320px;
+			border: 2px solid #AE392B;
+			height: 125px;
+			background: linear-gradient(180deg, #1D0001 0%, #DB0600 100%);
+
+			&__photo{
+				img{
+					position: absolute;
+					width: 135px;
+					margin-top: -50px;
+					margin-left: -10px;
+				}
+				
+			}
+
+			&__content{
+				
+				&_name{
+					@include setFont($size: 35px, $weight: 700, $color: #fff, $font: 'Din-Pro-Italic');
+					margin-left: 135px;
+					margin-top: 3px;
+				}
+
+				&_amount{
+					@include setFont($size: 20px, $weight: 500, $color: #fff);
+					margin-left: 135px;
+					margin-top: 2px;
+					display: inline-block;
+					padding: 3px;
+					border: 2px solid #fff;
+				}
+
+				&_ticket{
+					@include setFont($size: 18px, $weight: 500, $color: #260202);
+					border-bottom: 20px solid #F9DA4B;
+					border-right: 20px solid transparent;
+					width: 90%;
+					margin-top: 5px;
+					margin-left: -2px;
+
+					span{
+						// margin-top: 10px;
+						position: absolute;
+						margin-left: 135px;
+					}
+				}
+
+				&_notation{
+					@include setFont($size: 13.7px, $weight: 400, $color: #fff);
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+
+
+.pl-7{
+	padding-left: 7px;
+}
+
+.pr-7{
+	padding-right: 7px;
+}
+
+@font-face {
+  font-family: 'Din-Pro';
+  font-style: normal;
+  src: local('Din-Pro'), url(./fonts/dinpro.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Din-Pro-Italic';
+  font-style: normal;
+  src: local('Din-Pro-Italic'), url(./fonts/dinpro_italic.otf) format('truetype');
 }
