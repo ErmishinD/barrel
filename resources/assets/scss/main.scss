@@ -3,6 +3,8 @@
 $red: #E40412;
 $padding_inline: 12%;
 
+
+
 @mixin setFont($font : 'Din-Pro', $weight : 400, $size, $color: #fff){
 	font-family: $font;
 	font-size: $size;
@@ -23,6 +25,10 @@ html {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: 450px){
+		padding-inline: 3%;
+	}
 
 	&__logo{
 		display: flex;
@@ -55,6 +61,39 @@ html {
 			padding: 10px 20px;
 		}
 	}
+}
+
+.header_burger{
+
+	&__item{
+		@include setFont($size: 25px, $color: #fff);
+	}
+
+	&__button{
+		margin-top: 20px;
+		width: 175px;
+		justify-content: center;
+		@include setFont($size: 22px, $weight: 700);
+
+		.button_triangle{
+			margin-top: 25px !important;
+		}
+	}
+
+	&__logo{
+		
+
+		img{
+			width: 130px;
+			margin-inline:auto;
+		margin-top: 20px;
+		}
+		
+	}
+}
+
+.bm-item-list {
+	margin-left: 5%;
 }
 
 .red_button{
@@ -105,6 +144,14 @@ html {
 	&__logo{
 		img{
 			height: 300px;
+
+			@media (max-width: 900px){
+				height: 200px;
+			}
+
+			@media (max-width: 450px){
+				height: 150px;
+			}
 		}
 	}
 
@@ -117,6 +164,10 @@ html {
 			margin-inline: auto;
 			width: 400px;
 			line-height: 1.4;
+
+			@media (max-width: 450px){
+				width: 310px;
+			}
 		}
 	}
 
@@ -125,6 +176,8 @@ html {
 		display: inline-block;
 		@include setFont($size: 22px, $weight: 700);
 		padding: 10px 40px;
+
+		
 
 		.button_triangle{
 			padding: 7px;
@@ -147,6 +200,19 @@ html {
 	padding-inline: $padding_inline;
 	display: flex;
 	justify-content: space-between;
+	align-items:center;
+	padding-bottom: 80px;
+
+	@media (max-width: 900px){
+		justify-content: center;
+		flex-direction:column;
+		padding-bottom: 30px;
+	}
+
+	@media (max-width: 450px){
+		padding-inline: 3%;
+		padding-top: 30px;
+	}
 
 	&__content{
 		margin-top: 50px;
@@ -155,12 +221,16 @@ html {
 
 			&__first_row{
 				display: flex;
-				align_items:center;
+				align-items:flex-start;
 
 				span{
 					@include setFont($size: 60px, $weight: 700, $color: #000);
 					line-height: 1;
 					margin-left: 15px;
+
+					@media (max-width: 450px){
+						@include setFont($size: 45px, $weight: 700, $color: #000);
+					}
 				}
 			}
 
@@ -170,6 +240,13 @@ html {
 					@include setFont($size: 45px, $weight: 700, $color: #000);
 					line-height: 1;
 				}
+			}
+		}
+
+		&_button{
+			@media (max-width: 900px){
+				left: 50%;
+				transform: translate(-50%, 0);
 			}
 		}
 
@@ -188,6 +265,10 @@ html {
 	&__img{
 		img{
 			width: 500px;
+
+			@media (max-width: 992px){
+				width: 300px;
+			}
 		}
 	}
 }
@@ -205,6 +286,10 @@ html {
 	padding-inline: $padding_inline;
 	background-color: #ffefef;
 	padding-bottom: 60px;
+
+	@media (max-width: 450px){
+		padding-inline: 3%;
+	}
 
 	&__title{
 
@@ -302,12 +387,21 @@ html {
 	box-sizing: border-box;
 	padding-top: 60px;
 	padding-inline: $padding_inline;
+	padding-bottom: 30px;
+
+	@media (max-width: 450px){
+		padding-inline: 3%;
+	}
 
 	&__list{
 		margin-top: 15px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
+		@media (max-width: 853px){
+			justify-content: center;
+		}
 
 		&:after{
 			content: "";
@@ -328,11 +422,13 @@ html {
 					width: 135px;
 					margin-top: -50px;
 					margin-left: -10px;
+					z-index: 10;
 				}
 				
 			}
 
 			&__content{
+				overflow: hidden;
 				
 				&_name{
 					@include setFont($size: 35px, $weight: 700, $color: #fff, $font: 'Din-Pro-Italic');
@@ -356,11 +452,31 @@ html {
 					width: 90%;
 					margin-top: 5px;
 					margin-left: -2px;
+					// overflow: hidden;
+					position: relative;
 
 					span{
 						// margin-top: 10px;
 						position: absolute;
 						margin-left: 135px;
+						z-index: 4;
+					}
+
+					&:before {
+					    content: ""; /* отображает псевдоэлемент */
+					    position: absolute; /* абсолютное позиционирование */
+					    top: 0; /* верхняя координата */
+					    left: 0; /* левая координата */
+					    width: 2em; /* относительная ширина */
+					    height: 20px; /* высота как у оригинала */
+					    background-color: rgba(255, 255, 255, 0.3); /* белый цвет с полупрозрачностью */
+					    // transform: translateX(-4em) skewX(-45deg);
+					    animation-name: blink_order_tickets;
+					    animation-iteration-count: infinite;
+					    animation-duration: 3s;
+
+					    z-index: 5;
+					    transition: transform .5s ease;
 					}
 				}
 
@@ -369,8 +485,252 @@ html {
 					margin-left: 5px;
 				}
 			}
+
+			&__order{
+				padding: 7px;
+				box-sizing: border-box;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+
+				&_title{
+
+					span{
+						@include setFont($size: 32px, $weight: 700, $color: #fff);
+					}
+
+					&__notation{
+						@include setFont($size: 16px, $weight: 500, $color: #fff);
+					}
+				}
+
+				&_button{
+					@include setFont($size: 24px, $weight: 700, $color: #000);
+					cursor: pointer;
+					background: #F9DA4B;
+					height: 100%;
+					display: flex;
+					margin-top: 5px;
+					overflow: hidden;
+					position: relative;
+
+					span{
+						margin-block: auto;
+						margin-inline: auto;
+					}
+
+					&:before {
+					    content: ""; /* отображает псевдоэлемент */
+					    position: absolute; /* абсолютное позиционирование */
+					    top: 0; /* верхняя координата */
+					    left: 0; /* левая координата */
+					    width: 2em; /* относительная ширина */
+					    height: 100%; /* высота как у оригинала */
+					    background-color: rgba(255, 255, 255, 0.3); /* белый цвет с полупрозрачностью */
+					    // transform: translateX(-4em) skewX(-45deg);
+					    animation-name: blink_order_button;
+					    animation-iteration-count: infinite;
+					    animation-duration: 5s;
+
+					    z-index: 2;
+					    transition: transform .5s ease;
+					}
+				}
+			}
 		}
 	}
+
+	&__notation{
+		@include setFont($size: 14px, $weight: 400, $color: #260202);
+		opacity: 0.6;
+		text-align: center;
+		margin-top: 30px;
+		width: 50%;
+		margin-inline: auto;
+
+		@media (max-width: 600px){
+			width: 100%;
+		}
+	}
+}
+
+.map{
+	background-image: url('../img/map_back.png');
+	padding-top: 135px;
+	background-repeat: no-repeat;
+
+	@media (max-width: 900px){
+		padding-top: 50px;
+	}
+
+	@media (max-width: 450px){
+		padding-top: 20px;
+	}
+}
+
+.filling_stations{
+	padding-top: 60px;
+	padding-inline: $padding_inline;
+	text-align: center;
+	padding-bottom: 60px;
+	border-bottom: 5px solid #FFA2A2;
+
+	@media (max-width: 450px){
+		padding-inline: 3%;
+	}
+
+	&__title{
+		@include setFont($size: 30px, $weight: 400, $color: #260202, $font: 'Gilroy-Light');
+	}
+
+	&__list{
+		margin-top: 40px;
+
+		&_item{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 10px;
+			background: linear-gradient(270deg, #C12727 0%, #710E0E 100%);
+			border: 2px solid #AE2B2B;
+			margin-bottom: 7px;
+
+			&__text{
+				@include setFont($size: 16px, $weight: 400, $color: #fff, $font: 'Gilroy-Light');
+			}
+
+			&__mark{
+				display: flex;
+				padding-left: 10px;
+
+				img{
+					width: 20px;
+				}
+			}
+		}
+	}
+}
+
+.footer{
+	background-color: #000;
+
+	&__main{
+		padding-inline: $padding_inline;
+		padding-block: 40px;
+		border-bottom: 1px solid rgba(209, 209, 209, .4);
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 600px){
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+		}
+
+		&_item{
+
+			@media (max-width: 600px){
+				margin-bottom: 10px;
+			}
+
+			&__title{
+				@include setFont($size: 12px, $weight: 400, $color: #fff, $font: 'Gilroy-Light');
+				opacity: 0.5;
+			}
+			&__content{
+				margin-top: 5px;
+
+				a{
+					@include setFont($size: 15px, $weight: 400, $color: #fff, $font: 'Gilroy-Light');
+
+					img{
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&__notation{
+		text-align: center;
+		@include setFont($size: 13px, $weight: 400, $color: #fff, $font: 'Gilroy-Light');
+		opacity: 0.6;
+		padding-block: 12px;
+	}
+}
+
+#footer__main_item__icons{
+	display: flex;
+
+	@media (max-width: 600px){
+		justify-content: center;
+	}
+}
+
+.modal{
+	width: 320px;
+	background: linear-gradient(180deg, #1D0001 0%, #DB0600 100%);
+	border: 2px solid #AE392B;
+	box-sizing: border-box;
+	padding: 15px 20px;
+
+	&__title{
+		@include setFont($size: 25px, $weight: 700, $color: #fff);
+	}
+
+	&__content{
+		margin-top: 10px;
+		@include setFont($size: 16px, $weight: 400, $color: #fff);
+
+		span{
+			@include setFont($size: 16px, $weight: 700, $color: #fff);
+		}
+	}
+
+	&__buttons{
+		margin-top: 15px;
+
+		&_item{
+			justify-content: center;
+			padding-block: 7px;
+		}
+	}
+}
+
+.g-dialog-content:not(.g-dialog-content--fullscreen){
+	margin-inline: 0;
+}
+
+@keyframes blink_order_button {
+	0% {
+    transform: translateX(-4em) skewX(45deg);
+  }
+
+  /* Finish changes by here */
+  20% {
+    transform: translateX(15em) skewX(45deg);
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    transform: translateX(15em) skewX(45deg);
+  }
+}
+
+@keyframes blink_order_tickets {
+	0% {
+    transform: translateX(-2.2em) skewX(45deg);
+  }
+
+  /* Finish changes by here */
+  80% {
+    transform: translateX(-2.2em) skewX(45deg);
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    transform: translateX(14.5em) skewX(45deg);
+  }
 }
 
 
@@ -393,4 +753,10 @@ html {
   font-family: 'Din-Pro-Italic';
   font-style: normal;
   src: local('Din-Pro-Italic'), url(./fonts/dinpro_italic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  font-style: normal;
+  src: local('Gilroy-Light'), url(./fonts/Gilroy-Light.otf) format('truetype');
 }

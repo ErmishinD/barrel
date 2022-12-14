@@ -1,31 +1,62 @@
 <template>
-	<header class="header">
+	<GDialog v-model="modal_show" :width="320">
+		<div class="modal">
+			<div class="modal__title">
+				ДЛЯ ЗАМОВЛЕННЯ ТАЛОНІВ
+			</div> 
+			<div class="modal__content">
+				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)97-772-22-22</span>
+			</div>
+			<div class="modal__buttons">
+				<a v-for="item in modal_redirects" :href="item.redirectTo" class="modal__buttons_item amounts__list_item__order_button">
+					{{item.name}}
+				</a>
+			</div>
+		</div>
+	    
+	 </GDialog>
+	<header class="header" v-if="!isMobile">
 		<div class="header__logo">
-			<img src="../../img/logo_header.png" alt="">
+			<img :src="getImageUrl('logo_header.png')" alt="">
 		</div>
 		<div class="header__menu">
 			<a v-for="item in header_data" class="header__menu_item" v-bind:href="'#'+item.to">
 				{{item.name}}
 			</a>
-			<div class="header__menu_button red_button">
+			<div class="header__menu_button red_button" v-on:click="modal_show = true">
 				Замовити талони
 				<div class="button_triangle"></div>
 			</div>
 		</div>
 	</header>
+	<header v-else class="header_burger">
+		<Slide>
+	      <a v-for="item in header_data" class="header__menu_item header_burger__item" v-bind:href="'#'+item.to">
+				{{item.name}}
+		  </a>
+		  <div class="header__menu_button red_button header_burger__button" v-on:click="modal_show = true">
+				Замовити талони
+				<div class="button_triangle"></div>
+			</div>
+
+		   <div class="header_burger__logo">
+		   	<img :src="getImageUrl('logo_header.png')" alt="">
+		   </div>
+    	</Slide>
+	</header>
 	<div class="title">
 		<div class="title__logo">
-			<img src="../../img/title_logo.png" alt="">
+			<img :src="getImageUrl('title_logo.png')" alt="">
 		</div>
 		<div class="title__text">
 			<span>Вас вітає торговий дом АЗС “BARREL” на якому ви можете замовити талони на пальне</span>
 		</div>
-		<div class="title__button red_button">
+		<div class="title__button red_button" v-on:click="modal_show = true">
 			Замовити
 			<div class="button_triangle"></div>
 		</div>
 		<div class="title__mouse">
-			<img src="../../img/mouse.svg" alt="">
+			<img :src="getImageUrl('mouse.svg')" alt="">
 		</div>
 	</div>
 	<div class="advantages">
@@ -44,13 +75,13 @@
 					- {{advantage}}
 				</div>
 			</div>
-			<div class="title__button red_button">
+			<div class="title__button advantages__content_button red_button" v-on:click="modal_show = true">
 				Замовити
 				<div class="button_triangle"></div>
 			</div>
 		</div>
 		<div class="advantages__img">
-			<img src="../../img/advantage_img.png" alt="">
+			<img :src="getImageUrl('advantage_img.png')" alt="">
 		</div>
 	</div>
 	<div class="sales" id="sales">
@@ -107,21 +138,89 @@
 					<div class="amounts__list_item__content_notation">На данному ціннику вказана ціна за 1 літр палива</div>
 				</div>
 			</div>
-			<div class="amounts__list_item">
-				cs
+			<div class="amounts__list_item ">
+				<div class="amounts__list_item__order">
+					<div class="amounts__list_item__order_title">
+						<span>Замовляй талони</span>
+						<div class="amounts__list_item__order_title__notation">
+							та не переплачуй за пальне
+						</div>
+					</div>
+					<div class="amounts__list_item__order_button" v-on:click="modal_show = true">
+						<span>ЗАМОВИТИ</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="amounts__notation">
+			*На сайті показані середні ціни в мережі АЗС BARREL в Запоріжжі, фактичні ціни залежать від регіону, де розташована АЗС.
+		</div>
+	</div>
+	<div class="map" id="map" >
+		<div style="width: 100%; height: auto; position: relative; overflow: hidden;" v-on:click="pointer_events = 'auto'" > <iframe
+		src="https://www.google.com/maps/d/u/0/embed?mid=1POSrxLpIGCVGK02u_ODIQrPRz6xk7dI&ehbc=2E312F" width="100%" height="600" frameborder="0" 
+		:style="'border:0;  position: sticky; margin-top: -67px; pointer-events: '+pointer_events+';'"> </iframe>
+		</div>
+	</div>
+	<div class="filling_stations">
+		<div class="filling_stations__title">
+			СПИСОК АЗС «BARREL»
+		</div>
+		<div class="filling_stations__list">
+			<div v-for="address in addresses" class="filling_stations__list_item">
+				<div class="filling_stations__list_item__text">
+					{{address}}
+				</div>
+				<div class="filling_stations__list_item__mark">
+					<img :src="getImageUrl('mark.svg')" alt="">
+				</div>
 			</div>
 		</div>
 	</div>
+	<footer class="footer" id="footer">
+		<div class="footer__main">
+			<div class="footer__main_item">
+				<div class="footer__main_item__title">Copyright © 2022 BARREL</div>
+				<div class="footer__main_item__content" id="footer__main_item__icons">
+					<a href=""><img style="width: 20px;" :src="getImageUrl('inst_icon.svg')" alt=""></a>
+					<a href=""><img style="width: 10.5px;" :src="getImageUrl('facebook_icon.svg')" alt=""></a>
+				</div>
+			</div>
+			<div class="footer__main_item">
+				<div class="footer__main_item__title">Контактна інформація:</div>
+				<div class="footer__main_item__content">
+					<a href="tel:+38(097)-777-48-94">+38 (097)-777-48-94</a>
+				</div>
+			</div>
+			<div class="footer__main_item">
+				<div class="footer__main_item__title">Для пропозицій:</div>
+				<div class="footer__main_item__content">
+					<a href="mailto:Barrelazs@gmail.com">Barrelazs@gmail.com</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer__notation">
+			000 «BARREL» 345489 м. Запоріжжя, вул. Запоріжська, буд 38, поверх 4, офіс 2
+		</div>
+	</footer>
+
 </template>
 
 <script type="text/javascript">
 	import { Splide, SplideSlide } from '@splidejs/vue-splide';
 	import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
+	import { GDialog } from 'gitart-vue-dialog'
+	import 'gitart-vue-dialog/dist/style.css'
+
+	import { Slide } from 'vue3-burger-menu'
+
 	export default {
 		 components: {
 		 	Splide,
 		 	SplideSlide,
+		 	GDialog,
+		 	Slide,
 	  },
 	  data(){
 	    return {
@@ -142,7 +241,7 @@
 	      	{photo: 'amount_3.png', name: 'ГАЗ', amount: '27,99', amount_by_ticket: '46'},
 	      	{photo: 'amount_4.png', name: 'ДТ', amount: '48,99', amount_by_ticket: '46'},
 	      ],
-	      addresses: null,
+	      addresses: ['АЗС 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗС 002 м. Запоріжжя, вул. Чурбанова ЗЖ', 'АЗС 001 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗС 001 м. Запоріжжя, вул. Українська 52Д', 'АЗС 001 м. Запоріжжя, вул. Барикадна 58Г'],
 	      advantages: ['перечисляємо', 'кілька', 'переваг', 'талонів'],
 	      options: {
 	      	rewind : true,
@@ -155,16 +254,31 @@
 	      		arrows: 'splide__arrows arrows_for_slider',
 	      		arrow : 'splide__arrow arrow_for_slider',
 	      	}
-	      }    
+	      },
+	      pointer_events: 'none',   
+	      modal_show: false,
+	      modal_redirects: [
+	       {name: 'Наш Telegram', redirectTo: ''},
+	       {name: 'Наш Instagram', redirectTo: ''},
+	       {name: '(+380)97-772-22-22', redirectTo: 'tel:+38(097)-777-48-94'},
+	      ],
+	      isMobile: false,
 	  	};
+	  },
+	  created(){
+	  	window.addEventListener("resize", this.resizeWindow);
 	  },
 	  mounted(){
 	  	document.title = 'АЗС "BARREL"';
+	  	this.resizeWindow()
 	  },
 	  methods:{
 	  	getImageUrl(name){
 	  	        return new URL(`../../img/${name}`, import.meta.url).href
-	  	    }
+	  	},
+	  	resizeWindow(e){
+	  		this.isMobile = window.screen.width < 900
+	  	}
 	  },
 	};
 </script>

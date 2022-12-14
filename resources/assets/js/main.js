@@ -5,6 +5,8 @@ import axios from 'axios'
 import lodash from 'lodash'
 import VueAxios from 'vue-axios'
 import VueSplide from '@splidejs/vue-splide';
+import { GDialog } from 'gitart-vue-dialog'
+import { Slide } from 'vue3-burger-menu'
 
 import Barrel from './components/Barrel.vue'
 
@@ -16,6 +18,6 @@ const app = createApp({
     render: ()=>h(Barrel)
 })
 
-app.use(VueAxios, axios).use(VueSplide)
+app.use(VueAxios, axios).use(VueSplide).use(GDialog).use(Slide)
 
 app.mount('#app')

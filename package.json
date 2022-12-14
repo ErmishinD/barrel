@@ -20,10 +20,13 @@
         "@splidejs/vue-splide": "^0.6.12",
         "@toneflix-code/flickity-vue": "^1.0.1",
         "@vitejs/plugin-vue": "^3.2.0",
+        "gitart-vue-dialog": "^2.4.1",
         "vue": "^3.2.36",
         "vue-axios": "^3.5.2",
+        "vue-burger-menu": "^2.0.5",
         "vue-split-carousel": "^2.2.3",
         "vue-ssr-carousel": "^1.9.0",
+        "vue3-burger-menu": "^1.1.1",
         "vue3-carousel": "^0.2.9"
     }
 }
