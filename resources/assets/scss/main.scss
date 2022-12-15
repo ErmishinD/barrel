@@ -266,11 +266,11 @@ html {
 		display: flex;
 
 		&:after{
-			padding: 90px;
+			padding: 80px;
 			content: "";
 			border-radius: 50px;
 			background-color: #FA1010;
-			filter: blur(125px);
+			filter: blur(100px);
 			position: absolute;
 			margin-left: 90px;
 			margin-top: 70px;
@@ -751,8 +751,10 @@ html {
 	&__buttons{
 		margin-top: 15px;
 
+
 		&_item{
 			justify-content: center;
+			border-radius: 3px;
 			padding-block: 7px;
 		}
 	}
