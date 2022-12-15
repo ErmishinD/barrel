@@ -327,7 +327,12 @@ html {
 				width: 280px;
 				padding-top: 180px;
 				padding-inline: 15px;
-				height: 100%;
+				height: 94%;
+				transition: box-shadow .5s ease;
+
+				&:hover{
+					box-shadow: 5px 5px 0px 0px $red, 10px 10px 0px 0px #000;
+				}
 
 				&__title{
 					@include setFont($size: 25px, $weight: 700, $color: #fff);
