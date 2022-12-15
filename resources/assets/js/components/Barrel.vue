@@ -205,11 +205,6 @@
 		</div>
 	</footer>
 
-	<!-- <div class="test">
-		<img id="advantage_img_front" :src="getImageUrl('advantage_img_front.png')" alt="">
-		<img id="advantage_img_back" :src="getImageUrl('advantage_img_back.png')" alt="">
-	</div> -->
-
 </template>
 
 <script type="text/javascript">
