@@ -81,7 +81,8 @@
 			</div>
 		</div>
 		<div class="advantages__img">
-			<img :src="getImageUrl('advantage_img.png')" alt="">
+			<img id="advantage_img_front" :src="getImageUrl('advantage_img_front.png')" alt="">
+			<img id="advantage_img_back" :src="getImageUrl('advantage_img_back.png')" alt="">
 		</div>
 	</div>
 	<div class="sales" id="sales">
@@ -203,6 +204,11 @@
 			000 «BARREL» 345489 м. Запоріжжя, вул. Запоріжська, буд 38, поверх 4, офіс 2
 		</div>
 	</footer>
+
+	<!-- <div class="test">
+		<img id="advantage_img_front" :src="getImageUrl('advantage_img_front.png')" alt="">
+		<img id="advantage_img_back" :src="getImageUrl('advantage_img_back.png')" alt="">
+	</div> -->
 
 </template>
 
