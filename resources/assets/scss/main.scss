@@ -265,6 +265,24 @@ html {
 	&__img{
 		display: flex;
 
+		&:after{
+			padding: 90px;
+			content: "";
+			border-radius: 50px;
+			background-color: #FA1010;
+			filter: blur(125px);
+			position: absolute;
+			margin-left: 90px;
+			margin-top: 70px;
+
+			@media (max-width: 900px) {
+				padding: 50px;
+			  filter: blur(65px);
+			  margin-left: 50px;
+			  margin-top: 25px;
+			}
+		}
+
 		@media (max-width: 900px){
 			margin-top: 25px;
 			margin-bottom: 20px;
