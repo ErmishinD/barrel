@@ -130,12 +130,12 @@
 		<div class="amounts__list">
 			<div v-for="item in amounts" class="amounts__list_item">
 				<div class="amounts__list_item__photo">
-					<img :src="getImageUrl(item.photo)" alt="">
+					<img :src="item.photo" alt="">
 				</div>
 				<div class="amounts__list_item__content">
 					<div class="amounts__list_item__content_name">{{item.name}}</div>
 					<div class="amounts__list_item__content_amount">{{item.amount}} ГРН</div>
-					<div class="amounts__list_item__content_ticket"><span>ТАЛОН - {{item.amount_by_ticket}} ГРН</span></div>
+					<div class="amounts__list_item__content_ticket"><span>ТАЛОН {{item.amount_by_ticket}} ГРН</span></div>
 					<div class="amounts__list_item__content_notation">На данному ціннику вказана ціна за 1 літр палива</div>
 				</div>
 			</div>
@@ -236,12 +236,7 @@
 	      	{photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива <br> Для участі у акції переходь у наш Instagram'},
 	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива <br> Для участі у акції переходь у наш Instagram'},
 	      ],
-	      amounts: [
-	      	{photo: 'amount_1.png', name: '95', amount: '42,99', amount_by_ticket: '46'},
-	      	{photo: 'amount_2.png', name: '92', amount: '39,99', amount_by_ticket: '46'},
-	      	{photo: 'amount_3.png', name: 'ГАЗ', amount: '27,99', amount_by_ticket: '46'},
-	      	{photo: 'amount_4.png', name: 'ДТ', amount: '48,99', amount_by_ticket: '46'},
-	      ],
+	      amounts: [],
 	      addresses: ['АЗС 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗС 002 м. Запоріжжя, вул. Чурбанова ЗЖ', 'АЗС 001 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗС 001 м. Запоріжжя, вул. Українська 52Д', 'АЗС 001 м. Запоріжжя, вул. Барикадна 58Г'],
 	      advantages: ['перечисляємо', 'кілька', 'переваг', 'талонів'],
 	      options: {
@@ -272,6 +267,10 @@
 	  mounted(){
 	  	document.title = 'АЗС "BARREL"';
 	  	this.resizeWindow()
+
+		this.axios.get('/api/petrol_items').then(response => {
+			this.amounts = response.data.data
+		})
 	  },
 	  methods:{
 	  	getImageUrl(name){

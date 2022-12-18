@@ -490,6 +490,7 @@ html {
 
 			&__content{
 				overflow: hidden;
+				margin-left: -2px;
 				
 				&_name{
 					@include setFont($size: 35px, $weight: 700, $color: #fff, $font: 'Din-Pro-Italic');

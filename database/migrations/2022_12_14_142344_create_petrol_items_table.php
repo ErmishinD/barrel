@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('petrol_types', function (Blueprint $table) {
+        Schema::create('petrol_items', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('photo')->nullable();
+            $table->decimal('price_station')->default(0);
+            $table->decimal('price_ticket')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petrol_types');
+        Schema::dropIfExists('petrol_items');
     }
 };
