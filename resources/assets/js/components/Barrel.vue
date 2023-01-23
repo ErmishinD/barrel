@@ -5,7 +5,7 @@
 				ДЛЯ ЗАМОВЛЕННЯ ТАЛОНІВ
 			</div> 
 			<div class="modal__content">
-				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)97-772-22-22</span>
+				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)96-511-13-33</span>
 			</div>
 			<div class="modal__buttons">
 				<a v-for="item in modal_redirects" :href="item.redirectTo" class="modal__buttons_item amounts__list_item__order_button">
@@ -181,16 +181,16 @@
 	<footer class="footer" id="footer">
 		<div class="footer__main">
 			<div class="footer__main_item">
-				<div class="footer__main_item__title">Copyright © 2022 BARREL</div>
+				<div class="footer__main_item__title">Copyright © 2023 BARREL</div>
 				<div class="footer__main_item__content" id="footer__main_item__icons">
-					<a href=""><img style="width: 20px;" :src="getImageUrl('inst_icon.svg')" alt=""></a>
-					<a href=""><img style="width: 10.5px;" :src="getImageUrl('facebook_icon.svg')" alt=""></a>
+					<!-- <a href=""><img style="width: 20px;" :src="getImageUrl('inst_icon.svg')" alt=""></a> -->
+					<!-- <a href=""><img style="width: 10.5px;" :src="getImageUrl('facebook_icon.svg')" alt=""></a> -->
 				</div>
 			</div>
 			<div class="footer__main_item">
 				<div class="footer__main_item__title">Контактна інформація:</div>
 				<div class="footer__main_item__content">
-					<a href="tel:+38(097)-777-48-94">+38 (097)-777-48-94</a>
+					<a href="tel:+38(096)-511-13-33">+38 (096)-511-13-33</a>
 				</div>
 			</div>
 			<div class="footer__main_item">
@@ -233,8 +233,8 @@
 	      ],
 	      sales: [
 	      	{photo: 'sale_1.png', title: 'Щасливі вихідні', description: 'Лови знижку вихідного дня, кожну суботу та неділю <br> -2 грн/л на бензин <br>-1 грн/л на ДП <br> -0,5 грн/л на газ <br> за адресами: вул. Верхня ЗЕ та вул. Чурбанова ЗЖ'},
-	      	{photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива <br> Для участі у акції переходь у наш Instagram'},
-	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива <br> Для участі у акції переходь у наш Instagram'},
+	      	{photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива'}, //  <br> Для участі у акції переходь у наш Instagram
+	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива'}, //  <br> Для участі у акції переходь у наш Instagram
 	      ],
 	      amounts: [],
 	      addresses: ['АЗС 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗС 002 м. Запоріжжя, вул. Чубанова ЗЖ', 'АЗС 001 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗС 001 м. Запоріжжя, вул. Українська 52Д', 'АЗС 001 м. Запоріжжя, вул. Барикадна 58Г'],
@@ -254,9 +254,9 @@
 	      pointer_events: 'none',   
 	      modal_show: false,
 	      modal_redirects: [
-	       {name: 'Наш Telegram', redirectTo: ''},
-	       {name: 'Наш Instagram', redirectTo: ''},
-	       {name: '(+380)97-772-22-22', redirectTo: 'tel:+38(097)-777-48-94'},
+			{ name: 'Наш Telegram', redirectTo: 'https://t.me/Vlad7788'},
+	    //    {name: 'Наш Instagram', redirectTo: ''},
+	       {name: '(+380)96-511-13-33', redirectTo: 'tel:+38(096)-511-13-33'},
 	      ],
 	      isMobile: false,
 	  	};
