@@ -49,7 +49,7 @@
 			<img :src="getImageUrl('title_logo.png')" alt="">
 		</div>
 		<div class="title__text">
-			<span>Вас вітає торговий дом АЗС “BARREL” на якому ви можете замовити талони на пальне</span>
+			<span>Вас вітає торговий дім АЗК “BARREL” на якому ви можете замовити талони на пальне</span>
 		</div>
 		<div class="title__button red_button" v-on:click="modal_show = true">
 			Замовити
@@ -92,7 +92,7 @@
 				<span>Актуальні Акції</span>
 			</div>
 			<div class="sales__title_second_row">
-				<span>мережі АЗС “BARREL”</span>
+				<span>мережі АЗК “BARREL”</span>
 			</div>
 		</div>
 		<div class="sales_carousel">
@@ -124,7 +124,7 @@
 				<span>Ціни на пальне та газ</span>
 			</div>
 			<div class="sales__title_second_row">
-				<span>мережі АЗС “BARREL”</span>
+				<span>мережі АЗК “BARREL”</span>
 			</div>
 		</div>
 		<div class="amounts__list">
@@ -154,7 +154,7 @@
 			</div>
 		</div>
 		<div class="amounts__notation">
-			*На сайті показані середні ціни в мережі АЗС BARREL в Запоріжжі, фактичні ціни залежать від регіону, де розташована АЗС.
+			*На сайті показані середні ціни в мережі АЗК BARREL в Запоріжжі, фактичні ціни залежать від регіону, де розташована АЗК.
 		</div>
 	</div>
 	<div class="map" id="map" >
@@ -165,7 +165,7 @@
 	</div>
 	<div class="filling_stations">
 		<div class="filling_stations__title">
-			СПИСОК АЗС «BARREL»
+			СПИСОК АЗК «BARREL»
 		</div>
 		<div class="filling_stations__list">
 			<div v-for="address in addresses" class="filling_stations__list_item">
@@ -201,7 +201,7 @@
 			</div>
 		</div>
 		<div class="footer__notation">
-			000 «BARREL» 345489 м. Запоріжжя, вул. Запоріжська, буд 38, поверх 4, офіс 2
+			ТД «BARREL» м. Запоріжжя, вул. Запорізька, буд 38, поверх 4, офіс 2
 		</div>
 	</footer>
 
@@ -232,12 +232,12 @@
 	      	{name: 'Контакти', to: 'footer'},
 	      ],
 	      sales: [
-	      	{photo: 'sale_1.png', title: 'Щасливі вихідні', description: 'Лови знижку вихідного дня, кожну суботу та неділю <br> -2 грн/л на бензин <br>-1 грн/л на ДП <br> -0,5 грн/л на газ <br> за адресами: вул. Верхня ЗЕ та вул. Чурбанова ЗЖ'},
+	      	{photo: 'sale_1.png', title: 'Щасливі вихідні', description: 'Лови знижку вихідного дня, кожну суботу та неділю <br> -2 грн/л на бензин <br>-1 грн/л на ДП <br> -0,5 грн/л на газ <br> за адресами: вул. Верхня ЗЕ та вул. Чубанова ЗЖ'},
 	      	{photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива'}, //  <br> Для участі у акції переходь у наш Instagram
 	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива'}, //  <br> Для участі у акції переходь у наш Instagram
 	      ],
 	      amounts: [],
-	      addresses: ['АЗС 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗС 002 м. Запоріжжя, вул. Чубанова ЗЖ', 'АЗС 001 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗС 001 м. Запоріжжя, вул. Українська 52Д', 'АЗС 001 м. Запоріжжя, вул. Барикадна 58Г'],
+	      addresses: ['АЗК 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗК 002 м. Запоріжжя, вул. Чубанова ЗЖ', 'АЗК 003 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗК 004 м. Запоріжжя, вул. Українська 52Д', 'АЗК 005 м. Запоріжжя, вул. Барикадна 58Г'],
 	      advantages: ['перечисляємо', 'кілька', 'переваг', 'талонів'],
 	      options: {
 	      	rewind : true,
@@ -265,7 +265,7 @@
 	  	window.addEventListener("resize", this.resizeWindow);
 	  },
 	  mounted(){
-	  	document.title = 'АЗС "BARREL"';
+	  	document.title = 'АЗК "BARREL"';
 	  	this.resizeWindow()
 
 		this.axios.get('/api/petrol_items').then(response => {
