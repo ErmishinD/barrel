@@ -1,4 +1,12 @@
 {
+  "resources/assets/img/amount_1.png": {
+    "file": "assets/amount_1.ee5e3091.png",
+    "src": "resources/assets/img/amount_1.png"
+  },
+  "resources/assets/img/advantage_img_front.png": {
+    "file": "assets/advantage_img_front.373baacd.png",
+    "src": "resources/assets/img/advantage_img_front.png"
+  },
   "resources/assets/img/1671122178-2022-09-16 13.37.31.jpg": {
     "file": "assets/1671122178-2022-09-16 13.37.31.fa73407c.jpg",
     "src": "resources/assets/img/1671122178-2022-09-16 13.37.31.jpg"
@@ -7,45 +15,37 @@
     "file": "assets/advantage_img.36a58390.png",
     "src": "resources/assets/img/advantage_img.png"
   },
-  "resources/assets/img/advantage_img_back.png": {
-    "file": "assets/advantage_img_back.895ac582.png",
-    "src": "resources/assets/img/advantage_img_back.png"
-  },
-  "resources/assets/img/amount_1.png": {
-    "file": "assets/amount_1.ee5e3091.png",
-    "src": "resources/assets/img/amount_1.png"
-  },
-  "resources/assets/img/amount_3.png": {
-    "file": "assets/amount_3.b85c4bc1.png",
-    "src": "resources/assets/img/amount_3.png"
-  },
-  "resources/assets/img/Group 11.png": {
-    "file": "assets/Group 11.aff4f231.png",
-    "src": "resources/assets/img/Group 11.png"
-  },
   "resources/assets/img/amount_2.png": {
     "file": "assets/amount_2.a0849fd6.png",
     "src": "resources/assets/img/amount_2.png"
   },
-  "resources/assets/img/advantage_img_front.png": {
-    "file": "assets/advantage_img_front.373baacd.png",
-    "src": "resources/assets/img/advantage_img_front.png"
-  },
-  "resources/assets/img/amount_4.png": {
-    "file": "assets/amount_4.311ef186.png",
-    "src": "resources/assets/img/amount_4.png"
-  },
-  "resources/assets/img/facebook_icon.svg": {
-    "file": "assets/facebook_icon.3a8a239b.svg",
-    "src": "resources/assets/img/facebook_icon.svg"
+  "resources/assets/img/advantage_img_back.png": {
+    "file": "assets/advantage_img_back.895ac582.png",
+    "src": "resources/assets/img/advantage_img_back.png"
   },
   "resources/assets/img/inst_icon.svg": {
     "file": "assets/inst_icon.96aa3a9c.svg",
     "src": "resources/assets/img/inst_icon.svg"
   },
-  "resources/assets/img/map_back.png": {
-    "file": "assets/map_back.04ace0be.png",
-    "src": "resources/assets/img/map_back.png"
+  "resources/assets/img/Group 11.png": {
+    "file": "assets/Group 11.aff4f231.png",
+    "src": "resources/assets/img/Group 11.png"
+  },
+  "resources/assets/img/amount_3.png": {
+    "file": "assets/amount_3.b85c4bc1.png",
+    "src": "resources/assets/img/amount_3.png"
+  },
+  "resources/assets/img/facebook_icon.svg": {
+    "file": "assets/facebook_icon.3a8a239b.svg",
+    "src": "resources/assets/img/facebook_icon.svg"
+  },
+  "resources/assets/img/logo_header.png": {
+    "file": "assets/logo_header.3078df71.png",
+    "src": "resources/assets/img/logo_header.png"
+  },
+  "resources/assets/img/amount_4.png": {
+    "file": "assets/amount_4.311ef186.png",
+    "src": "resources/assets/img/amount_4.png"
   },
   "resources/assets/img/mark.png": {
     "file": "assets/mark.8e1a8a16.png",
@@ -55,9 +55,9 @@
     "file": "assets/mark.d2859510.svg",
     "src": "resources/assets/img/mark.svg"
   },
-  "resources/assets/img/logo_header.png": {
-    "file": "assets/logo_header.3078df71.png",
-    "src": "resources/assets/img/logo_header.png"
+  "resources/assets/img/map_back.png": {
+    "file": "assets/map_back.04ace0be.png",
+    "src": "resources/assets/img/map_back.png"
   },
   "resources/assets/img/mouse.svg": {
     "file": "assets/mouse.2aa28cbe.svg",
@@ -67,21 +67,25 @@
     "file": "assets/sale_1.dd60be42.png",
     "src": "resources/assets/img/sale_1.png"
   },
-  "resources/assets/img/sale_2.png": {
-    "file": "assets/sale_2.3f3f2b84.png",
-    "src": "resources/assets/img/sale_2.png"
-  },
   "resources/assets/img/sale_3.png": {
     "file": "assets/sale_3.0b1a5566.png",
     "src": "resources/assets/img/sale_3.png"
+  },
+  "resources/assets/img/title_back.png": {
+    "file": "assets/title_back.f0798f7a.png",
+    "src": "resources/assets/img/title_back.png"
+  },
+  "resources/assets/img/sale_2.png": {
+    "file": "assets/sale_2.3f3f2b84.png",
+    "src": "resources/assets/img/sale_2.png"
   },
   "resources/assets/img/title_logo.png": {
     "file": "assets/title_logo.00417643.png",
     "src": "resources/assets/img/title_logo.png"
   },
-  "resources/assets/img/title_back.png": {
-    "file": "assets/title_back.f0798f7a.png",
-    "src": "resources/assets/img/title_back.png"
+  "resources/assets/scss/fonts/Gilroy-Light.otf": {
+    "file": "assets/Gilroy-Light.de1f8bbf.otf",
+    "src": "resources/assets/scss/fonts/Gilroy-Light.otf"
   },
   "resources/assets/scss/fonts/dinpro.otf": {
     "file": "assets/dinpro.4080973c.otf",
@@ -91,12 +95,8 @@
     "file": "assets/dinpro_italic.4b24de67.otf",
     "src": "resources/assets/scss/fonts/dinpro_italic.otf"
   },
-  "resources/assets/scss/fonts/Gilroy-Light.otf": {
-    "file": "assets/Gilroy-Light.de1f8bbf.otf",
-    "src": "resources/assets/scss/fonts/Gilroy-Light.otf"
-  },
   "resources/assets/js/main.js": {
-    "file": "assets/main.1eea71bb.js",
+    "file": "assets/main.4ec1d36b.js",
     "src": "resources/assets/js/main.js",
     "isEntry": true,
     "imports": [

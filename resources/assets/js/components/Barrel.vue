@@ -5,7 +5,7 @@
 				ДЛЯ ЗАМОВЛЕННЯ ТАЛОНІВ
 			</div> 
 			<div class="modal__content">
-				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)96-511-13-33</span>
+				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)98-983-77-88</span>
 			</div>
 			<div class="modal__buttons">
 				<a v-for="item in modal_redirects" :href="item.redirectTo" class="modal__buttons_item amounts__list_item__order_button">
@@ -190,13 +190,13 @@
 			<div class="footer__main_item">
 				<div class="footer__main_item__title">Контактна інформація:</div>
 				<div class="footer__main_item__content">
-					<a href="tel:+38(096)-511-13-33">+38 (096)-511-13-33</a>
+					<a href="tel:+38(098)-983-77-88">+38 (098)-983-77-88</a>
 				</div>
 			</div>
 			<div class="footer__main_item">
 				<div class="footer__main_item__title">Для пропозицій:</div>
 				<div class="footer__main_item__content">
-					<a href="mailto:Barrelazs@gmail.com">Barrelazs@gmail.com</a>
+					<a href="mailto:Email-td.barrel0001@gmail.com">Email-td.barrel0001@gmail.com</a>
 				</div>
 			</div>
 		</div>
@@ -237,8 +237,20 @@
 	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива'}, //  <br> Для участі у акції переходь у наш Instagram
 	      ],
 	      amounts: [],
-	      addresses: ['АЗК 001 м. Запоріжжя, вул. Верхня ЗЕ', 'АЗК 002 м. Запоріжжя, вул. Чубанова ЗЖ', 'АЗК 003 м. Запоріжжя, вул. Ігоря Сікорського 482', 'АЗК 004 м. Запоріжжя, вул. Українська 52Д', 'АЗК 005 м. Запоріжжя, вул. Барикадна 58Г'],
-	      advantages: ['перечисляємо', 'кілька', 'переваг', 'талонів'],
+	      addresses: [
+			'вул. Верхня ЗЕ', 
+			'вул. Чубанова ЗЖ', 
+			'вул. Ігоря Сікорського 482', 
+			'вул. Проспект Соборний 8 (р-н Автовокзал)', 
+			'вул. Українська 52Д', 
+			'вул. Барикадна 58Г',
+			'вул. Миколи Краснова 26А',
+		  ],
+	      advantages: [
+			'Цена талона  ниже, чем стоимость топлива непосредственно на заправке', 
+			'Возможность использования талона на любой заправке сети "Barrel", в течении месяца', 
+			'Фиксированная цена талона - даёт возможность планировать свой бюджет',
+		  ],
 	      options: {
 	      	rewind : true,
 	      	type: 'loop',
@@ -256,7 +268,7 @@
 	      modal_redirects: [
 			{ name: 'Наш Telegram', redirectTo: 'https://t.me/Vlad7788'},
 	    //    {name: 'Наш Instagram', redirectTo: ''},
-	       {name: '(+380)96-511-13-33', redirectTo: 'tel:+38(096)-511-13-33'},
+	       {name: '(+380)98-983-77-88', redirectTo: 'tel:+38(098)-983-77-88'},
 	      ],
 	      isMobile: false,
 	  	};
