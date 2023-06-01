@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('petrol_items.index')" :active="request()->routeIs('petrol_items.*')">
                         {{ __('Виды топлива') }}
                     </x-nav-link>
+                    
+                    <x-nav-link :href="route('promotions.index')" :active="request()->routeIs('promotions.*')">
+                        {{ __('Акции') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
@@ -69,6 +74,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('petrol_items.index')" :active="request()->routeIs('petrol_items.*')">
                 {{ __('Виды топлива') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('promotions.index')" :active="request()->routeIs('promotions.*')">
+                {{ __('Акции') }}
             </x-responsive-nav-link>
         </div>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PetrolItemController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PromotionController;
 use App\Models\PetrolItem;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
         })->middleware(['auth', 'verified'])->name('dashboard');
 
         Route::resource('petrol_items', PetrolItemController::class);
+        Route::resource('promotions', PromotionController::class);
     });
 });
 

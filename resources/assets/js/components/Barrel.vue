@@ -100,7 +100,7 @@
 				<splide-slide v-for="sale in sales">
 					<div class="sales_carousel__item">
 						<div class="sales_carousel__item_photo">
-							<img :src="getImageUrl(sale.photo)" alt="">
+							<img :src="sale.photo" alt="">
 						</div>
 						<div class="sales_carousel__item_content">
 							<div class="sales_carousel__item_content__title">
@@ -232,9 +232,9 @@
 	      	{name: 'Контакти', to: 'footer'},
 	      ],
 	      sales: [
-	      	{photo: 'sale_1.png', title: 'Щасливі вихідні', description: 'Лови знижку вихідного дня, кожну суботу та неділю <br> -2 грн/л на бензин <br>-1 грн/л на ДП <br> -0,5 грн/л на газ <br> за адресами: вул. Верхня ЗЕ та вул. Чубанова ЗЖ'},
-	      	{photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива'}, //  <br> Для участі у акції переходь у наш Instagram
-	      	{photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива'}, //  <br> Для участі у акції переходь у наш Instagram
+	      	// {photo: 'sale_1.png', title: 'Щасливі вихідні', description: 'Лови знижку вихідного дня, кожну суботу та неділю <br> -2 грн/л на бензин <br>-1 грн/л на ДП <br> -0,5 грн/л на газ <br> за адресами: вул. Верхня ЗЕ та вул. Чубанова ЗЖ'},
+	      	// {photo: 'sale_2.png', title: 'Даруємо 10 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 10л палива'}, //  <br> Для участі у акції переходь у наш Instagram
+	      	// {photo: 'sale_3.png', title: 'Даруємо 50 літрів !', description: 'В компанії Barrel є гарна новина для Вас - ми розігруємо 50л палива'}, //  <br> Для участі у акції переходь у наш Instagram
 	      ],
 	      amounts: [],
 	      addresses: [
@@ -283,6 +283,10 @@
 
 		this.axios.get('/api/petrol_items').then(response => {
 			this.amounts = response.data.data
+		})
+
+		this.axios.get('/api/promotions').then(response => {
+			this.sales = response.data.data
 		})
 	  },
 	  methods:{

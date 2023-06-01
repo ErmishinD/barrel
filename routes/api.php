@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('petrol_items', [HomeController::class, 'getPetrolItems']);
+Route::get('promotions', [HomeController::class, 'getPromotions']);

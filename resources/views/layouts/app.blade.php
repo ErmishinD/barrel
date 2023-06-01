@@ -12,6 +12,8 @@
 
         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
 
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
