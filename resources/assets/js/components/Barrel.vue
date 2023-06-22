@@ -5,7 +5,7 @@
 				ДЛЯ ЗАМОВЛЕННЯ ТАЛОНІВ
 			</div> 
 			<div class="modal__content">
-				Напиши нашому менеджеру слово “Талони” у telegram або intagram, або телефонуй за номером: <br> <span>(+380)98-983-77-88</span>
+				Напиши нам в Instagram слово «ТАЛОНИ» або телефонуй за номером: <br> <span>(+380) 98-983-77-88</span>
 			</div>
 			<div class="modal__buttons">
 				<a v-for="item in modal_redirects" :href="item.redirectTo" class="modal__buttons_item amounts__list_item__order_button">
@@ -267,9 +267,9 @@
 	      pointer_events: 'none',   
 	      modal_show: false,
 	      modal_redirects: [
-			{ name: 'Наш Telegram', redirectTo: 'https://t.me/Vlad7788'},
-	    //    {name: 'Наш Instagram', redirectTo: ''},
-	       {name: '(+380)98-983-77-88', redirectTo: 'tel:+38(098)-983-77-88'},
+			// { name: 'Наш Telegram', redirectTo: 'https://t.me/Vlad7788'},
+	       {name: 'Наш Instagram', redirectTo: 'https://instagram.com/ua.barrel?igshid=YmMyMTA2M2Y='},
+	       {name: '(+380) 98-983-77-88', redirectTo: 'tel:+38(098)-983-77-88'},
 	      ],
 	      isMobile: false,
 	  	};
